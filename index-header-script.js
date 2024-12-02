@@ -18,7 +18,7 @@ const indexHeaderWidget = new HtmlWidget();
 
 
 async function injectIndexHeader(){
-    const renderIndexHeader = await indexHeaderWidget.renderFromFile('/index-header.html');
+    const renderIndexHeader = await indexHeaderWidget.renderFromFile('index-header.html');
     
 
     if(headerLocation){

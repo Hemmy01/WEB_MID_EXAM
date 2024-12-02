@@ -2,6 +2,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.46.2",
     "html-widget": "^1.0.0",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "live": "^0.1.19",
+    "server": "^1.0.41"
   }
 }
