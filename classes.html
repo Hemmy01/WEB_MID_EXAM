@@ -1,0 +1,453 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes | Elite Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/html-widget@1.0.0"></script>
+    <script type="module" src="classes.js"></script>
+    <script type="module" src="index-header-script.js"></script>
+
+    
+    <style>
+        /* Global Styles */
+    
+        body{
+          margin: 0;
+          margin-top: 80px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #F2D0A4;
+            color: #333;
+        }
+
+        /* Header */
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            border-radius: 20%;
+        }
+
+        .gym-logo {
+            height: 70px;
+            margin-right: 10px;
+            border-radius: 80%;
+        }
+
+
+        .gym-name {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu ul li {
+            margin: 0 15px;
+        }
+
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+       
+	   /* Classes Section */
+.section-classes {
+    text-align: center;
+    padding: 50px 20px;
+     background: linear-gradient(135deg, #F2D0A4 0%, #E6B896 100%); /* Nude gradient */
+    background-size: cover;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section-classes hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+.section-classes h1 {
+    font-size: 48px;
+    font-family: 'Bebas Neue', cursive;
+    color: #ff416c;
+    margin-bottom: 20px;
+}
+
+.section-classes p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased minimum width for better visibility */
+    gap: 30px; /* Increased gap for more space between the cards */
+    padding: 0 20px;
+}
+
+.class-card {
+    background: #000000;
+    border-radius: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for better card visibility */
+    text-align: center;
+    padding: 30px; /* Increased padding for better content spacing */
+    position: relative;
+    height: 500px; /* Set a fixed height for each card */
+    overflow: hidden; /* Ensure content doesn't overflow */
+	background-image: linear-gradient(45deg, #1a1a1a 25%, transparent 25%, transparent 75%, #1a1a1a 75%), 
+                     linear-gradient(-45deg, #1a1a1a 25%, transparent 25%, transparent 75%, #1a1a1a 75%);
+}
+
+.class-card img {
+    width: 100%;
+    height: 300px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image covers the container area without distortion */
+    border-radius: 10px;
+}
+
+.class-card h2 {
+    font-size: 24px;
+    margin: 15px 0;
+    color: PINK;
+}
+
+.class-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+	color: white;
+}
+
+
+        .join-btn {
+            background: #ff416c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .join-btn:hover {
+            background: #ff4b2b;
+        }
+
+        /* Join Now Modal */
+        .join-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .join-modal.active {
+            display: block;
+        }
+
+        .join-modal h2 {
+            margin-top: 0;
+            color: #ff416c;
+        }
+
+        .join-modal input,
+        .join-modal select,
+        .join-modal button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .join-modal button {
+            background: #ff416c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .join-modal button:hover {
+            background: #ff4b2b;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
+		/* Footer */
+        footer {
+            background: black;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for a floating effect */
+            position: relative;
+            font-family: 'Roboto', sans-serif;
+            transition: transform 0.3s ease;
+        }
+
+        footer p {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #f1f1f1;
+        }
+
+        footer .footer-links {
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: #ffab76;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            background-color: #ff4d4d; /* Highlighted on hover */
+            transform: translateY(-3px); /* Slight lift effect */
+        }
+
+        footer .footer-links a:active {
+            color: #fff;
+            background-color: #ff416c; /* Darker shade when clicked */
+        }
+
+        /* Social Icons */
+        footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        footer .social-icons a {
+            color: #ffab76;
+            font-size: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #ff4d4d;
+            transform: translateY(-3px);
+        }
+
+        /* Back to Top Button */
+        footer .back-to-top {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: #ff4d4d;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        footer .back-to-top:hover {
+            background: #ff416c;
+            transform: translateY(-3px);
+        }
+
+        /* Optional: Hover effect for the entire footer */
+        footer:hover {
+            transform: translateY(-5px); /* Footer lift on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Navbar -->
+
+    <div id="classes-header"></div>
+
+    <!-- <header class="top-header">
+        <div class="logo-container">
+            <img src="3634ea6af15e9717d85e4b490c88d0e6.jpg" alt="Gym Logo" class="gym-logo">
+            <span class="gym-name">ELITE FITNESS</span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+   <!-- Classes Section -->
+<section class="section-classes">
+    <h1>Our Fitness Classes</h1>
+
+    <p>Find the best classes to get fit, toned, and energized. Explore a variety of classes that suit your fitness level.</p>
+    <div class="class-grid">
+        <!-- Yoga Class -->
+        <div class="class-card">
+            <img src="pexels-olly-917732.jpg" alt="Yoga Class">
+            <h2>Yoga</h2>
+            <p>Relax, stretch, and strengthen your body with our expert yoga instructors.</p>
+            <button class="join-btn">Join Now</button>
+        </div>
+        <!-- Spin Class -->
+        <div class="class-card">
+            <img src="pexels-benedito-lima-jr-313370028-19962070.jpg" alt="Spin Class">
+            <h2>Spin</h2>
+            <p>High-energy cycling workouts to help you burn fat and improve cardiovascular health.</p>
+            <button class="join-btn">Join Now</button>
+        </div>
+        <!-- New Class: Zumba -->
+        <div class="class-card">
+            <img src="pexels-davelexe-5936039.jpg" alt="Zumba Class">
+            <h2>Zumba</h2>
+            <p>Dance your way to fitness with fun, calorie-burning Zumba sessions!</p>
+            <button class="join-btn">Join Now</button>
+        </div>
+        <!-- New Class: Boxing -->
+        <div class="class-card">
+            <img src="/466478965_18489090421032563_8727982618949115585_n.jpg" alt=" Boxing Class">
+            <h2>Boxing</h2>
+            <p>Unleash your power and build strength with intense, knockout boxing workouts!</p>
+            <button class="join-btn">Join Now</button>
+        </div>
+        <!-- New Class: BODY BUILDING -->
+        <div class="class-card">
+            <img src="pexels-cesar-galeao-1673528-3289711.jpg" alt=" Body Building Class">
+            <h2>Body Building</h2>
+            <p>"Lift, sculpt, and strengthen with bodybuilding sessions for serious gains.</p>
+            <button class="join-btn">Join Now</button>
+        </div>
+		<!-- New Class: Callisthenics-->
+        <div class="class-card">
+            <img src="pexels-rdne-7187883.jpg" alt="  Callisthenics Class">
+            <h2>Callisthenics</h2>
+            <p>Build strength, flexibility, and endurance without equipment, just you and your body</p>
+            <button class="join-btn">Join Now</button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Join Now Modal -->
+    <!-- <div class="modal-overlay"></div>
+    <div class="join-modal">
+        <h2>Join Now</h2>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <select required>
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="number" placeholder="Age" min="1" required>
+            <input type="text" placeholder="Height (e.g., 5'7\")" required>
+            <input type="text" placeholder="Weight (e.g., 68 kg)" required>
+            <input type="text" placeholder="Preferred Duration (e.g., 3 months)" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div> -->
+
+    <div class="modal-overlay"></div>
+<div class="join-modal">
+    <h2>Join Now</h2>
+    <form id="joinForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <select id="gender" required>
+            <option value="" disabled selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="number" id="age" placeholder="Age" min="1" required>
+        <input type="text" id="height" placeholder="Height (e.g., 5'7\")" required>
+        <input type="text" id="weight" placeholder="Weight (e.g., 68 kg)" required>
+        <input type="text" id="duration" placeholder="Preferred Duration (e.g., 3 months)" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+   
+
+	
+	 <!-- Footer -->
+    <footer>
+       
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+			<a href="membership.html">Membership</a>
+			<p>© 2024 Elite Fitness. All Rights Reserved.</p>
+        </div>
+        <div class="social-icons">
+            <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        
+    </div>
+        </div>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </footer>
+</body>
+</html>

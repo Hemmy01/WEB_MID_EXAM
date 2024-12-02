@@ -1,0 +1,110 @@
+
+ /* Styles the top navigation header */
+ .top-header {
+    position: absolute; /* Positions the header relative to the video container */
+    top: 0; /* Aligns it to the top */
+    left: 0;
+    right: 0;
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; 
+    align-items: center; /* Vertically aligns items in the center */
+    padding-left: 2%;
+    padding-right: 2%;
+    background: rgba(0, 0, 0, 1); /* Adds a semi-transparent black background */
+    z-index: 10; /* Places the header above the video */
+}
+
+/* Styles the container for the logo and gym name */
+.logo-container {
+    display: flex; /* Uses flexbox for layout */
+    align-items: center; /* Aligns items vertically in the center */
+}
+
+/* Styles the gym logo image */
+.gym-logo {
+    height: 80px; /* Sets a fixed height for the logo */
+    margin-right: 10px; 
+}
+
+.nav-controller{
+    display: flex;
+}
+
+/* Styles the gym name text */
+.gym-name {
+    color: hsl(0, 0%, 100%); /* Sets the text color to white */
+    font-size: 2.5rem; /* Increases the font size */
+    font-family: 'Roboto Slab', serif; /* Uses the 'Roboto Slab' font for styling */
+    font-weight: bold; /* Makes the text bold */
+    text-transform: uppercase; /* Converts text to uppercase */
+    letter-spacing: 1px; /* Adds spacing between letters */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adds a shadow effect to the text */
+}
+
+ /* Styles the navigation bar */
+.nav-bar {
+    display: flex; /* Uses flexbox for layout */
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+/* Styles the navigation links */
+.nav-bar-link {
+    box-sizing: border-box;
+    /* padding: 10px 20px;  */
+    text-align: center;
+    text-decoration: none; /* Removes the underline */
+    font-size: 16px; /* Sets the font size */
+    font-weight: bold; /* Makes the text bold */
+    /* background-color: #d62828;  */
+    color: #ffffff; /* Sets the text color */
+    border-radius: 25px; /* Rounds the corners */
+    transition: all 0.3s ease; /* Adds a smooth transition effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow around the link */
+}
+
+/* Changes the navigation links on hover */
+.nav-bar-link:hover {
+    color: #f77f00; /* Changes the background color */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Intensifies the shadow */
+}
+
+     /* Styles the icon bar for search, heart, and cart icons */
+        .icon-bar {
+            display: none; /* Uses flexbox for layout */
+            gap: 20px; /* Adds space between each icon */
+        }
+
+        /* Styles the individual icons */
+        .icon-bar a {
+            color: #ffffff; /* Sets the icon color to white */
+            font-size: 1.4rem; /* Sets the size of the icons */
+            text-decoration: none; /* Removes any underline */
+            transition: color 0.3s ease; /* Adds a smooth transition for color changes */
+        }
+
+        /* Changes the color of the icons on hover */
+        .icon-bar a:hover {
+            color: #f77f00; /* Changes the color to orange */
+        }
+
+
+@media (min-width: 786px)  {
+    .icon-bar{
+        display: none;
+    }
+}
+
+@media (max-width: 786px) {
+
+    .gym-name {
+        display: none;
+    }
+    .icon-bar{
+        display: flex;
+    }
+    .nav-bar{
+        display: none;
+    }
+    
+}

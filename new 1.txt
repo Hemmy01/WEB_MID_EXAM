@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Elite Fitness</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto Slab', serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        /* Navbar Styling */
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: linear-gradient(to right, #ff416c, #ff4b2b); /* Gradient background */
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .gym-logo {
+            height: 50px; /* Adjust logo size */
+            margin-right: 10px;
+        }
+
+        .gym-name {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu ul li {
+            margin: 0 15px;
+        }
+
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu ul li a:hover {
+            color: #ffe0b3;
+        }
+
+        /* About Section Styling */
+        .section-about {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to bottom, #ff6f61, #ffab76);
+            color: white;
+            font-family: 'Roboto Slab', serif;
+        }                                                                                                                      .footer-links a {
+    color: #ffab76;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 1.5rem;
+    transition: color 0.3s ease;
+}
+
+        .section-about h1 {
+            font-size: 56px;
+            font-family: 'Bebas Neue', cursive;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-about p {
+            font-size: 20px;
+            font-weight: 400;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #f8f9fa;
+        }
+
+        .section-about p strong {
+            color: #ffe0b3;
+        }
+       /* Team Section Styling */
+.team-section {
+    padding: 50px 20px;
+    background: #000000;
+    background-image: linear-gradient(45deg, #1a1a1a 25%, transparent 25%, transparent 75%, #1a1a1a 75%), 
+                     linear-gradient(-45deg, #1a1a1a 25%, transparent 25%, transparent 75%, #1a1a1a 75%);
+    background-size: 20px 20px;
+    color: #333;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-family: 'Bebas Neue', cursive;
+    color: #ff416c;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Flex Layout for Horizontal Scrolling */
+.team-cards {
+    display: flex; /* Align cards in a horizontal line */
+    gap: 30px; /* Space between cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px;
+    justify-content: flex-start; /* Align to the left */
+    scroll-snap-type: x mandatory; /* Modern smooth snap scroll */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on mobile devices */
+    max-width: 100%; /* Ensure the cards don't overflow from the container */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Modern Scrollbar Styling */
+.team-cards::-webkit-scrollbar {
+    height: 8px; /* Thin scrollbar */
+}
+
+.team-cards::-webkit-scrollbar-thumb {
+    background: #ff416c; /* Scroll thumb color */
+    border-radius: 10px;
+}
+
+.team-cards::-webkit-scrollbar-track {
+    background: #333; /* Track color */
+}
+
+/* Team Card Styling */
+.team-card {
+    background: linear-gradient(to bottom, #ff6f61, #ffab76); /* Gradient background for cards */
+    border-radius: 15px; /* Slightly rounded corners */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    overflow: hidden; /* Hide overflow for a cleaner look */
+    position: relative; /* Allow layering for effects */
+    scroll-snap-align: center; /* Ensure the card snaps to center */
+    min-width: 250px; /* Ensure the cards maintain their size */
+}
+
+/* Image Styling for Team Members */
+.team-card img {
+    border-radius: 50%;
+    width: 200px; /* Consistent size for the images */
+    height: 200px;
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth zoom-in effect */
+}
+
+/* Hover Effects for Images */
+.team-card img:hover {
+    transform: scale(1.2); /* Slight zoom-in effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Add shadow for emphasis */
+}
+
+/* Hover Effects for Team Cards */
+.team-card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+/* Text Styling for Team Members */
+.team-card h3 {
+    font-size: 20px;
+    margin: 10px 0 5px;
+    font-family: 'Roboto Slab', serif;
+    color: #fff; /* White text for contrast */
+    text-transform: capitalize; /* Proper capitalization */
+}
+
+.team-card p {
+    font-size: 16px;
+    color: #f1f1f1; /* Slightly lighter color for roles */
+    font-style: italic; /* Subtle style for roles */
+}
+
+/* Active Card Styling (For Highlighting Active Card) */
+.team-card.active {
+    border: 3px solid #ff416c; /* Active card border */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4); /* Enhanced shadow for the active card */
+}
+
+
+
+
+
+          
+
+        /* Footer Styling */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        .footer-links a {
+            color: #ffab76;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Navbar -->
+    <header class="top-header">
+        <div class="logo-container">
+            <img src="file:///C:/Users/PC/Pictures/Screenshots/Screenshot%20(15).png" alt="Gym Logo" class="gym-logo">
+            <span class="gym-name">ELITE FITNESS</span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="section-about">
+        <h1>About Us</h1>
+        <p>Welcome to <strong>Elite Fitness</strong>! Your journey to fitness starts here. With state-of-the-art equipment, expert trainers, and a vibrant community, we provide the ultimate environment for achieving your health and wellness goals.</p>
+        <p>Our mission is simple: to empower and inspire individuals of all fitness levels to become the <strong>best versions of themselves</strong>. Join us, and let’s redefine your fitness journey together!</p>
+    </section>
+
+   <!-- Team Section -->
+<section class="team-section">
+    <h2>Meet Our Team</h2>
+    <div class="team-cards">
+        <!-- Trainer 1 -->
+        <div class="team-card">
+            <img src="file:///C:/Users/PC/Pictures/WEB%20MID%20EXAM/WhatsApp%20Image%202024-11-21%20at%2014.55.11_f30dccc1.jpg" alt="Trainer 1">
+            <h3>Simeon Panda</h3>
+            <p>Head Trainer</p>
+        </div>
+
+        <!-- Trainer 2 -->
+        <div class="team-card">
+            <img src="file:///C:/Users/PC/Pictures/WEB%20MID%20EXAM/pexels-cottonbro-4327032.jpg" alt="Trainer 2">
+            <h3>Emily Roberts</h3>
+            <p>Yoga Instructor</p>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="team-card">
+            <img src="file:///C:/Users/PC/Pictures/WEB%20MID%20EXAM/pexels-tima-miroshnichenko-5327453.jpg" alt="Trainer 3">
+            <h3>Chris Lee</h3>
+            <p>Strength Coach</p>
+        </div>
+
+        <!-- Trainer 4 -->
+        <div class="team-card">
+            <img src="file:///C:/Users/PC/Pictures/WEB%20MID%20EXAM/pexels-ivan-samkov-5677301.jpg" alt="Trainer 4">
+            <h3>Anna Smith</h3>
+            <p>Cardio Specialist</p>
+        </div>
+
+        <!-- Trainer 5 -->
+        <div class="team-card">
+            <img src="file:///C:/Users/PC/Pictures/WEB%20MID%20EXAM/pexels-karolina-grabowska-4021584.jpg" alt="Trainer 5">
+            <h3>Michael Johnson</h3>
+            <p>Personal Trainer</p>
+        </div>
+
+        <!-- Trainer 6 -->
+        <div class="team-card">
+            <img src="file:///C:/Users/PC/Pictures/WEB%20MID%20EXAM/pexels-luis-quintero-2847313.jpg" alt="Trainer 6">
+            <h3>Jessica Brown</h3>
+            <p>Nutrition Expert</p>
+        </div>
+    </div>
+</section>
+
+ 
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Elite Fitness. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="classes.html">Classes</a>
+            <a href="membership.html">Membership</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
